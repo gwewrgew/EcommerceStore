@@ -1,0 +1,27 @@
+class EcommerceStore:
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product_name, price):
+        product = {"product_name": product_name, "price": price}
+        self.products.append(product)
+        print(f"Product '{product_name}' added successfully.")
+
+    def view_products(self):
+        if not self.products:
+            print("No products added.")
+        else:
+            print("Products:")
+            for product in self.products:
+                print(f"Product Name: {product['product_name']}")
+                print(f"Price: {product['price']}")
+                print()
+
+if __name__ == '__main__':
+    ecommerce_store = EcommerceStore()
+
+    ecommerce_store.add_product("Product 1", 19.99)
+    ecommerce_store.add_product("Product 2", 29.99)
+    ecommerce_store.add_product("Product 3", 9.99)
+
+    ecommerce_store.view_products()
